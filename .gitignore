@@ -1,0 +1,7 @@
+.idea/*
+ideas/*
+target/*
+src/test/java/me/braggs/coverage-error.log
+resources/config.json
+resources/configdata.json
+*.iml

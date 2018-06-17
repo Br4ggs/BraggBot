@@ -1,0 +1,14 @@
+{
+	"categoryDescriptions": {
+		"fun": "These commands are mostly just for fun"
+	},
+	"commandDescriptions": [
+		{
+			"name": "jpeg",
+			"category": "fun",
+			"description": "Add more jpeg to an image",
+			"structure": "[url]",
+			"example": "<PREFIX>jpeg www.url.com/to/image.png"
+		}
+	]
+}

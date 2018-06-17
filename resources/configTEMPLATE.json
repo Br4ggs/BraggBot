@@ -1,0 +1,28 @@
+{
+  "botID": "insert bot id",
+  "superUserID": "insert user id",
+  "RoleLevels": {
+    "Owner": 4,
+    "admin": 3,
+    "Member": 1
+  },
+  "announceChannelID": "insert channel id",
+  "GuildID": "insert guild id",
+  "RedditUserName": "insert name",
+  "RedditPswd": "insert password",
+  "RedditID": "insert id",
+  "RedditSecret": "insert secret",
+  "useChatterBot": false,
+  "PandoraBotKey": "insert key",
+  "PandoraBotName": "insert name",
+  "MALuser": "insert name",
+  "MALpswd": "insert token",
+  "unSplashToken": "insert token",
+  "detectLanguageToken": "insert token",
+  "dbName": "insert dbname",
+  "dbUser": "insert username",
+  "dbPswd": "insert password",
+  "logChannelID": "insert channel id",
+  "lockDown": false,
+  "VoiceVolume": 20
+}

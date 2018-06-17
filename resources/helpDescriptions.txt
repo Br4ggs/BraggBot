@@ -1,0 +1,47 @@
+HELLO| say hi to Braggbot, usage: ```%hello```
+RTD| roll a dice, usage: ```%rtd```
+PING| ping Braggbot, usage: ```%ping```
+ECHO| braggbot will repeat what you say, usage: ```%echo <text>```
+HELP| show information about given command, usage: ```%help <command>```
+INFO| list Braggbot's info, usage: ```%info```
+
+HANDFAP| *lennyface*
+COPYPASTA| use this command if you want to have braggbot kicked off the server :D
+
+RPS| starts a game of rock paper scissors, usage: ```%rps <start|exit>``` play using `%rpsplay`
+RPSPLAY| play rock paper scissors, usage: ```%rpsplay <rock|paper|scissor>```
+
+GETREDDITPOST| get posts from your favorite subreddit, usage: ```%getredditpost <subredditName> no r/! <sorting category> <time period>```
+QUICKMATH| do some simple math right here, right now, usage: ```%quickmath <whole_number> <+ | - | * | /> <whole_number>```
+
+SEARCHVC| search for a voicechat's ID, usage: ```%searchvc <name of the voice channel>```
+JOINVC| Tell Braggbot to join a voicechat, usage: ```%joinvc``` make sure you are in a voicechannel so that braggbot can join in
+LEAVEVC| tell braggbot to leave the current voicechat, usage: ```%leavevc```
+ADDSONG| add a song, or playlist to braggbots music queue, usage: ```%addsong <yt url or song id>``` word of warning, this is still in development :sweat_smile:
+SKIPSONG| skips the currently playing song, usage: ```%skipsong```
+GETSONG| get information from a song, usage: ```%getsong <song identifier>```
+SHOWQUEUE| show the queue of currently listed songs along with their identifier, usage: ```%showqueue```
+GETVOLUME| get current default server volume, usage: ```%getvolume```
+SETVOLUME| set current default server volume, usage: ```%setvolume <integer between 0 and 150>```
+PAUSE| toggle braggbots pause for in vc, usage: ```%pause```
+
+GETCONFIG| get braggbots config, usage: ```%getconfig```
+SETCONFIG| set a variable from braggbots config, usage: ```%setconfig <variable> <value>```
+SETPERMISSION| set the permission of roles, usage: ```%setpermission <role> <level>```
+
+IGNORE| make braggbot drop all input from a user, usage: ```%ignore <discord user id>```
+UNIGNORE| make braggbot take all input from a user again, usage: ```%unignore <discord user id>```
+VIEWIGNORES| view a list of currently ignored users, as well as the ignore level, usage: ```%viewignores```
+SETIGNORELEVEL| set the level for which braggbot will drop input from(up to, so 5 would still allow users of level 5), usage: ```%setignorelevel <integer from 0 to 5>```
+
+SHUTDOWN| turns off Braggbot, usage: ```%shutdown```
+RESTART| restarts Braggbot, usage: ```%restart```
+
+
+TRANSLATE| translate text into a given language, usage: ```%translate <language> <text>``` to view all available languages for translation, see `%viewlangs`
+VIEWLANGS| list off all available languages for translation, usage: ```%viewlangs```
+
+XKCD| gets a random xkcd comic, usage: ```%xkcd```
+ANIME| search for an anime on myAnimeList, usage: ```%anime <name of anime>```
+
+IMAGE| search for an image, usage: ```%image <search querry>```

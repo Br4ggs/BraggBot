@@ -1,0 +1,7 @@
+-Created new initial command framework
+-began work on porting existing methods to framework
+-added jpeg command
+-added joke command
+-reworked config
+-braggbot now creates a new configdata.json if no config is found
+-many parameters can now be declared as optional
