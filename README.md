@@ -8,7 +8,4 @@ This project is currently in a bit of a hiatus as I am busy working on other pro
 the future as there are still many things i want to add and/or rework in this project.
 
 This project is currently in a bit of a disarray as I am working on a revision of the command framework. This revision
-is mostly completed except for a bunch of the different command classes which still need to be adapted to the newer framework.
-
-The previous version of this bot was hosted on a private BitBucket, but due to security issues
-~~and totally not me being a dummy and putting sensitive information in the config file~~ I cannot put this version on Github.
+is mostly completed except for a bunch of the different command classes which still need to be adapted/ported to the newer framework.
