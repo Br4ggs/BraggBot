@@ -32,6 +32,9 @@ public class App
 
         DiscordLogger.logMessage("Braggbot is online!");
 
+
+        //admittedly ugly singleton initialization
+        DatabaseManager.Singleton.INSTANCE.getInstance();
         ConfigManager.Singleton.INSTANCE.getInstance();
     }
 }

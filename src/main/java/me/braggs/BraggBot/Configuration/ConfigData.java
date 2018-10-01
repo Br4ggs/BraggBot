@@ -21,6 +21,7 @@ public class ConfigData {
     public String logchannelID = "insert log channel ID here";
 
     //database
+    public boolean useDatabase = false;
     public String databaseName = "insert db name here";
     public String databaseUser = "insert db username here";
     public String databasePassword = "insert db username password here";

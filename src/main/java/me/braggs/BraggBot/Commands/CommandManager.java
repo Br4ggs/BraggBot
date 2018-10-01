@@ -16,6 +16,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import me.braggs.BraggBot.Commands.CommandFramework.Command;
+import me.braggs.BraggBot.Configuration.ConfigManager;
 import me.braggs.BraggBot.DatabaseManager;
 import me.braggs.BraggBot.Validator;
 
@@ -49,26 +50,28 @@ public class CommandManager
     private Map<String, Command> commands;
 
     private CommandManager() {
-        try{
-            ResultSet ignoredUserSet = DatabaseManager.Singleton.INSTANCE.getInstance().getConnection()
-                    .prepareStatement("SELECT * FROM ignored_users")
-                    .executeQuery();
+        if(ConfigManager.Singleton.INSTANCE.getInstance().getConfig().useDatabase){
+            try{
+                ResultSet ignoredUserSet = DatabaseManager.Singleton.INSTANCE.getInstance().getConnection()
+                        .prepareStatement("SELECT * FROM ignored_users")
+                        .executeQuery();
 
-            ResultSet macroSet = DatabaseManager.Singleton.INSTANCE.getInstance().getConnection()
-                    .prepareStatement("SELECT * FROM macros")
-                    .executeQuery();
+                ResultSet macroSet = DatabaseManager.Singleton.INSTANCE.getInstance().getConnection()
+                        .prepareStatement("SELECT * FROM macros")
+                        .executeQuery();
 
-            while (ignoredUserSet.next()){
-                System.out.println(ignoredUserSet.getLong("user_id"));
-                ignoredUsers.add(ignoredUserSet.getLong("user_id"));
+                while (ignoredUserSet.next()){
+                    System.out.println(ignoredUserSet.getLong("user_id"));
+                    ignoredUsers.add(ignoredUserSet.getLong("user_id"));
+                }
+
+                while (macroSet.next()){
+                    macros.put("%" + macroSet.getString("title"), macroSet.getString("description"));
+                }
             }
-
-            while (macroSet.next()){
-                macros.put("%" + macroSet.getString("title"), macroSet.getString("description"));
+            catch (SQLException e){
+                System.out.println(e);
             }
-        }
-        catch (SQLException e){
-            System.out.println(e);
         }
 
         commands = loadCommandsFromFactories();

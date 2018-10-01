@@ -1,12 +1,14 @@
 package me.braggs.BraggBot;
 
 
+import me.braggs.BraggBot.Commands.CommandManager;
 import me.braggs.BraggBot.Configuration.ConfigData;
 import me.braggs.BraggBot.Configuration.ConfigManager;
 
 import java.sql.*;
 
 public class DatabaseManager {
+
     private Connection connection;
 
     public enum Singleton {
@@ -15,7 +17,12 @@ public class DatabaseManager {
         DatabaseManager value;
 
         Singleton(){
-            value = new DatabaseManager();
+            if(ConfigManager.Singleton.INSTANCE.getInstance().getConfig().useDatabase){
+                value = new DatabaseManager();
+            }
+            else {
+                DiscordLogger.logMessage("Database is disabled in config, some functionality will not be available");
+            }
         }
 
         public DatabaseManager getInstance(){
@@ -48,6 +55,10 @@ public class DatabaseManager {
     }
 
     public Connection getConnection() {
+        if(!ConfigManager.Singleton.INSTANCE.getInstance().getConfig().useDatabase){
+            return null;
+        }
+
         try{
             if(!connection.isValid(0)){
                 setupConnection();
