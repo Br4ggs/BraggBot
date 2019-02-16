@@ -2,12 +2,14 @@ package me.braggs;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import me.braggs.BraggBot.ResourceFileManager;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -26,10 +28,19 @@ public class ResourceFileManagerTest {
             testUsers.put("User3", 3);
             ResourceFileManager.INSTANCE.createJsonFile("TEST_HighScore.json", testUsers);
 
-            boolean doesEmptyFileExist = ResourceFileManager.INSTANCE.doesExist("TEST_HighScore.json");
-            if (!doesEmptyFileExist) {
+            boolean doesFileExist = ResourceFileManager.INSTANCE.doesExist("TEST_HighScore.json");
+            if (!doesFileExist) {
                fail();
             }
+
+            // just an important thing to note, Gson always deserializes numbers as doubles,
+            // therefore, it is safer to handle the deserialized values like this.
+            Map<String, Number> secondUsers = ResourceFileManager.INSTANCE.getJsonFile(
+                    "TEST_HighScore.json",
+                    HashMap.class);
+
+            int thirdUser = secondUsers.get("User3").intValue();
+            System.out.println(thirdUser);
 
         } catch (IOException e) {
             fail();
