@@ -19,32 +19,20 @@
 
     <profiles>
         <profile>
+            <id>JDA</id>
             <repositories>
                 <repository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>bintray-dv8fromtheworld-maven</id>
-                    <name>bintray</name>
-                    <url>https://dl.bintray.com/dv8fromtheworld/maven</url>
-                </repository>
-                <repository>
-                    <id>central</id>
-                    <name>bintray</name>
+                    <id>jcenter</id>
+                    <name>jcenter-bintray</name>
                     <url>http://jcenter.bintray.com</url>
                 </repository>
+                <repository> <!-- Required for OkHTTP 3.13.0-SNAPSHOT -->
+                    <id>sonatype</id>
+                    <name>sonatype-snapshots</name>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </repository>
             </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>bintray-dv8fromtheworld-maven</id>
-                    <name>bintray-plugins</name>
-                    <url>https://dl.bintray.com/dv8fromtheworld/maven</url>
-                </pluginRepository>
-            </pluginRepositories>
-            <id>bintray</id>
+
         </profile>
     </profiles>
 
@@ -65,14 +53,14 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>3.3.0_266</version>
+            <version>3.8.2_459</version>
         </dependency>
 
         <dependency>
